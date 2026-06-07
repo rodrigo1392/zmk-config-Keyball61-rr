@@ -64,6 +64,12 @@
         irq-gpios = <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 		scroll-layers = <5>;
 		snipe-layers = <6>;
+
+        trackball_lock {
+            layers = <0 1 2>;
+            bindings = <&none>, <&none>, <&none>, <&none>;
+            tick = <1>;
+        };
     };
 };
 
