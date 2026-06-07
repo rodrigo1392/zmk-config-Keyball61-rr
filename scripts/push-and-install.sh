@@ -11,8 +11,8 @@
 # ./scripts/push-and-install.sh --wait 20
 #
 # DEFAULT:
-# Prompts for a commit message, runs git fetch, git add ., git rebase
-# --autostash origin/main, git commit, git push, sleeps 10 seconds, then runs
+# Prompts for a commit message, runs git fetch, git add ., git commit,
+# git rebase origin/main, git push, sleeps 10 seconds, then runs
 # scripts/install-right-firmware.sh --commit from the repo root.
 #
 # USE CASE:
@@ -150,15 +150,19 @@ main() {
   info "Staging changes..."
   git add .
 
-  info "Rebasing onto $REMOTE/$BRANCH..."
-  git rebase --autostash "$REMOTE/$BRANCH"
-
   if git diff --cached --quiet; then
-    error "No staged changes to commit after rebase"
+    error "No staged changes to commit"
   fi
 
   info "Committing..."
   git commit -m "$COMMIT_MESSAGE"
+
+  info "Rebasing onto $REMOTE/$BRANCH..."
+  git rebase "$REMOTE/$BRANCH"
+
+  if ! git diff --quiet || ! git diff --cached --quiet; then
+    error "Working tree is not clean after rebase. Resolve changes before pushing/installing."
+  fi
 
   info "Pushing..."
   git push "$REMOTE" HEAD
