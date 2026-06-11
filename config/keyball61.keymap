@@ -42,39 +42,40 @@
             bindings = <&mo>, <&td_scroll_toggle>;
         };
 
+        td_fun_toggle: td_fun_toggle {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <350>;
+            bindings = <&none>, <&tog FUN>;
+        };
+
+        hold_fun_toggle: hold_fun_toggle {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "hold-preferred";
+            bindings = <&mo>, <&td_fun_toggle>;
+        };
+
         td_trackbless_space: td_trackbless_space {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <350>;
-            bindings = <&kp SPACE>, <&to TRACKBLESS>;
+            bindings = <&kp SPACE>, <&tog TRACKBLESS>;
         };
 
-        td_qwrt_space: td_qwrt_space {
+        td_trackbless_toggle: td_trackbless_toggle {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <350>;
-            bindings = <&kp SPACE>, <&to DEFAULT>;
-        };
-
-        td_trackbless_enter: td_trackbless_enter {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <350>;
-            bindings = <&kp ENTER>, <&to TRACKBLESS>;
+            bindings = <&none>, <&tog TRACKBLESS>;
         };
 
         td_mouse_qwrt_trackbless: td_mouse_qwrt_trackbless {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <350>;
-            bindings = <&to DEFAULT>, <&to TRACKBLESS>;
-        };
-
-        td_trackbless_none: td_trackbless_none {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <350>;
-            bindings = <&none>, <&to TRACKBLESS>;
+            bindings = <&to DEFAULT>, <&tog TRACKBLESS>;
         };
     };
 
@@ -88,7 +89,7 @@
 &kp TAB         &kp Q      &kp W         &kp E         &kp R   &kp T                                    &kp Y            &kp U   &kp I      &kp O    &kp P          &kp BACKSLASH
 &kp ESC         &kp A      &kp S         &kp D         &kp F   &kp G                                    &kp H            &kp J   &kp K      &kp L    &kp SEMI       &kp SQT
 &kp LEFT_SHIFT  &kp Z      &kp X         &kp C         &kp V   &kp B        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp N            &kp M   &kp COMMA  &kp DOT  &kp FSLH       &kp RIGHT_SHIFT
-&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &kp MINUS  &mo SNIPE  &td_trackbless_space  &mo SCROLL  &mo SYM  &td_trackbless_space                          &kp RIGHT_ALT  &kp ENTER
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &kp MINUS  &hold_fun_toggle FUN 0  &kp SPACE  &mo SCROLL  &mo SYM  &kp SPACE                                      &kp RIGHT_ALT  &kp ENTER
             >;
         };
 
@@ -98,7 +99,7 @@
 &trans  &trans    &trans    &trans  &trans     &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans    &trans    &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans    &trans    &trans  &trans     &trans  &trans  &trans  &td_trackbless_none              &trans  &trans
+&trans  &trans    &trans    &trans  &hold_fun_toggle FUN 0  &trans  &trans  &trans  &trans              &trans  &trans
             >;
 
             label = "NUM";
@@ -111,7 +112,7 @@
 &trans  &trans           &trans        &trans        &trans        &trans                       &trans          &trans         &trans            &trans                &trans                 &trans
 &trans  &bt BT_CLR       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans                       &kp MINUS       &kp EQUAL      &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &trans                 &trans
 &trans  &trans           &trans        &trans        &trans        &trans       &trans  &kp DEL  &kp UNDERSCORE  &kp PLUS       &trans            &trans                &trans                 &trans
-&trans  &trans           &trans        &trans        &trans        &trans       &trans  &trans  &td_trackbless_enter                                                      &trans                 &trans
+&trans  &trans           &trans        &trans        &hold_fun_toggle FUN 0  &trans       &trans  &trans  &kp ENTER                                                              &trans                 &trans
             >;
         };
 
@@ -122,7 +123,7 @@
 &trans  &kp F1  &kp F2   &kp F3   &kp F4   &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp F5  &kp F6   &kp F7   &kp F8   &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans   &trans   &trans   &trans  &trans  &trans  &td_trackbless_none              &trans  &trans
+&trans  &trans  &trans   &trans   &hold_fun_toggle FUN 0  &trans  &trans  &trans  &trans              &trans  &trans
             >;
         };
 
@@ -133,7 +134,7 @@
 &trans  &trans    &trans    &trans  &trans     &trans                  &trans         &trans     &trans  &trans     &trans     &trans
 &trans  &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans     &trans              &kp PAGE_UP    &mkp LCLK  &trans  &mkp RCLK  &mkp MCLK  &trans
 &trans  &trans    &trans    &trans  &trans     &trans  &trans  &trans  &kp PAGE_DOWN  &trans     &trans  &trans     &trans     &trans
-&trans  &trans    &trans    &trans  &trans     &trans  &trans  &trans  &td_mouse_qwrt_trackbless                   &trans     &trans
+&trans  &trans    &trans    &trans  &hold_fun_toggle FUN 0  &td_trackbless_toggle  &trans  &trans  &td_mouse_qwrt_trackbless          &trans     &trans
             >;
         };
 
@@ -143,8 +144,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &kp UP  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &td_trackbless_none              &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp DEL  &trans  &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT
+&trans  &trans  &trans  &trans  &hold_fun_toggle FUN 0  &td_trackbless_toggle  &trans  &trans  &td_trackbless_toggle              &trans  &trans
             >;
         };
 
@@ -155,7 +156,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &td_trackbless_none              &trans  &trans
+&trans  &trans  &trans  &trans  &hold_fun_toggle FUN 0  &trans  &trans  &trans  &trans              &trans  &trans
             >;
         };
 
@@ -166,7 +167,7 @@
 &kp TAB         &kp Q      &kp W         &kp E         &kp R   &kp T                                    &kp Y            &kp U   &kp I      &kp O    &kp P          &kp BACKSLASH
 &kp ESC         &kp A      &kp S         &kp D         &kp F   &kp G                                    &kp H            &kp J   &kp K      &kp L    &kp SEMI       &kp SQT
 &kp LEFT_SHIFT  &kp Z      &kp X         &kp C         &kp V   &kp B        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp N            &kp M   &kp COMMA  &kp DOT  &kp FSLH       &kp RIGHT_SHIFT
-&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &kp MINUS  &mo SNIPE  &td_trackbless_space  &hold_scroll_toggle SCROLL 0  &hold_scroll_toggle SYM 0  &td_qwrt_space          &kp RIGHT_ALT  &kp ENTER
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &kp MINUS  &hold_fun_toggle FUN 0  &td_trackbless_space  &hold_scroll_toggle SCROLL 0  &hold_scroll_toggle SYM 0  &td_trackbless_space    &kp RIGHT_ALT  &kp ENTER
             >;
         };
     };

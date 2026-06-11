@@ -19,3 +19,4 @@ No todo cambio de keymap necesita ADR. En particular, los commits automaticos `[
 | [0009](0009-bloquear-trackball-fuera-de-modos-de-puntero.md) | Bloquear trackball fuera de `MOUSE`, `SCROLL` y `SNIPE`. | pendiente |
 | [0010](0010-agregar-layer-trackbless.md) | Agregar layer `TRACKBLESS` como QWRT con trackball bloqueado. | pendiente |
 | [0011](0011-reorganizar-fila-inferior-y-scroll-direccional.md) | Reorganizar fila inferior, herencia de mouse/scroll y flechas en `SCROLL`. | pendiente |
+| [0012](0012-ajustar-accesos-fun-trackbless-y-delete.md) | Ajustar acceso global a `FUN`, limitar toggle de `TRACKBLESS` y duplicar `DEL` en `SCROLL`. | pendiente |

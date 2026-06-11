@@ -36,8 +36,8 @@ En `SCROLL`, mantener herencia general y usar estas teclas como flechas:
 - `RIGHT_SHIFT`: derecha;
 - `;`: arriba.
 
-En `SYM`, asignar `DELETE` a la tecla fisica `]` de `DEFAULT`, para recuperar
-`DEL` sin dedicarle una tecla fisica en `DEFAULT`.
+En `SYM` y `SCROLL`, asignar `DELETE` a la tecla fisica `]` de `DEFAULT`, para
+recuperar `DEL` sin dedicarle una tecla fisica en `DEFAULT`.
 
 ## Consecuencias
 
@@ -46,7 +46,7 @@ de modificadores. `MOUSE` y `SCROLL` conservan mas comportamiento de `DEFAULT`,
 reduciendo sorpresas al entrar en esas capas.
 
 `DELETE` deja de estar asignado fisicamente en la fila inferior derecha, pero
-queda disponible desde `SYM`.
+queda disponible desde `SYM` y `SCROLL`.
 
 ## Archivos afectados
 
