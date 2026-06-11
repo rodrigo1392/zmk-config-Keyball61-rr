@@ -21,19 +21,21 @@ La numeracion actual de layers es:
 #define MOUSE   4
 #define SCROLL  5
 #define SNIPE   6
+#define TRACKBLESS 7
 ```
 
 ## Decision
 
 Agregar `trackball_lock` como subnodo del PMW3610 en el overlay derecho para
-bloquear todos los layers excepto `MOUSE`, `SCROLL` y `SNIPE`:
+bloquear `NUM`, `SYM`, `FUN` y `TRACKBLESS`, sin bloquear `DEFAULT`, `MOUSE`,
+`SCROLL` ni `SNIPE`:
 
 ```c
 trackball: trackball@0 {
     ...
 
     trackball_lock {
-        layers = <0 1 2 3>;
+        layers = <1 2 3 7>;
         bindings = <&none>, <&none>, <&none>, <&none>;
         tick = <1>;
     };
@@ -46,10 +48,17 @@ interceptado se descarta.
 El nodo debe quedar dentro de `trackball: trackball@0`. Ubicarlo directamente
 en `/ { ... }` no hizo que el driver interceptara el movimiento.
 
+`DEFAULT` no se incluye en `trackball_lock.layers` porque eso tambien intercepta
+el movimiento antes de que `automouse-layer` pueda evaluarlo. Con `DEFAULT`
+bloqueado, el puntero queda quieto, pero tampoco se activa `MOUSE` por
+`CONFIG_PMW3610_MOVEMENT_THRESHOLD`.
+
 ## Consecuencias
 
-El trackball no deberia mover el puntero en `DEFAULT`, `NUM`, `SYM` ni `FUN`.
-El movimiento queda permitido en `MOUSE`, `SCROLL` y `SNIPE`.
+El trackball no deberia mover el puntero en `NUM`, `SYM`, `FUN` ni
+`TRACKBLESS`. En `DEFAULT` el movimiento queda permitido para que
+`automouse-layer` pueda activar `MOUSE` cuando se supera
+`CONFIG_PMW3610_MOVEMENT_THRESHOLD`.
 
 La decision acopla `keyball61_right.overlay` con la numeracion del keymap. Si se
 renumeran layers, se debe actualizar `trackball_lock.layers`.

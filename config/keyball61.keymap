@@ -5,6 +5,7 @@
 #define MOUSE   4
 #define SCROLL  5
 #define SNIPE   6
+#define TRACKBLESS 7
 
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
@@ -26,11 +27,39 @@
 
 / {
     behaviors {
-        td_mouse_default: td_mouse_default {
+        td_trackbless_space: td_trackbless_space {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <350>;
-            bindings = <&none>, <&to DEFAULT>;
+            bindings = <&kp SPACE>, <&to TRACKBLESS>;
+        };
+
+        td_qwrt_space: td_qwrt_space {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <350>;
+            bindings = <&kp SPACE>, <&to DEFAULT>;
+        };
+
+        td_trackbless_enter: td_trackbless_enter {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <350>;
+            bindings = <&kp ENTER>, <&to TRACKBLESS>;
+        };
+
+        td_mouse_qwrt_trackbless: td_mouse_qwrt_trackbless {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <350>;
+            bindings = <&to DEFAULT>, <&to TRACKBLESS>;
+        };
+
+        td_trackbless_none: td_trackbless_none {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <350>;
+            bindings = <&none>, <&to TRACKBLESS>;
         };
     };
 
@@ -44,7 +73,7 @@
 &kp TAB         &kp Q      &kp W         &kp E         &kp R   &kp T                                    &kp Y            &kp U   &kp I      &kp O    &kp P          &kp BACKSLASH
 &kp ESC         &kp A      &kp S         &kp D         &kp F   &kp G                                    &kp H            &kp J   &kp K      &kp L    &kp SEMI       &kp SQT
 &kp LEFT_SHIFT  &kp Z      &kp X         &kp C         &kp V   &kp B        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp N            &kp M   &kp COMMA  &kp DOT  &kp FSLH       &kp RIGHT_SHIFT
-&none           &kp LCTRL  &kp LEFT_ALT  &kp LEFT_WIN  &mo SNIPE  &lt MOUSE SPACE  &mo SCROLL    &mo SYM      &kp SPACE                                      &kp RIGHT_ALT  &kp DELETE
+&none           &kp LCTRL  &kp LEFT_ALT  &kp LEFT_WIN  &mo SNIPE  &td_trackbless_space  &mo SCROLL  &mo SYM  &td_trackbless_space                          &kp RIGHT_ALT  &kp DELETE
             >;
         };
 
@@ -54,7 +83,7 @@
 &trans  &trans    &trans    &trans  &trans     &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans    &trans    &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans    &trans    &trans  &trans     &trans  &trans  &trans  &trans                          &trans  &trans
+&trans  &trans    &trans    &trans  &trans     &trans  &trans  &trans  &td_trackbless_none              &trans  &trans
             >;
 
             label = "NUM";
@@ -67,7 +96,7 @@
 &trans  &trans           &trans        &trans        &trans        &trans                       &trans          &trans         &trans            &trans                &trans                 &trans
 &trans  &bt BT_CLR       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans                       &kp MINUS       &kp EQUAL      &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &trans                 &trans
 &trans  &trans           &trans        &trans        &trans        &trans       &trans  &trans  &kp UNDERSCORE  &kp PLUS       &trans            &trans                &trans                 &trans
-&trans  &trans           &trans        &trans        &trans        &trans       &trans  &trans  &kp ENTER                                                              &trans                 &trans
+&trans  &trans           &trans        &trans        &trans        &trans       &trans  &trans  &td_trackbless_enter                                                      &trans                 &trans
             >;
         };
 
@@ -78,7 +107,7 @@
 &trans  &kp F1  &kp F2   &kp F3   &kp F4   &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp F5  &kp F6   &kp F7   &kp F8   &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans   &trans   &trans   &trans  &trans  &trans  &trans                          &trans  &trans
+&trans  &trans  &trans   &trans   &trans   &trans  &trans  &trans  &td_trackbless_none              &trans  &trans
             >;
         };
 
@@ -89,7 +118,7 @@
 &trans  &trans    &trans    &trans  &trans     &trans                  &trans         &trans     &trans  &trans     &trans     &trans
 &trans  &mkp RCLK  &mkp MCLK  &mkp LCLK  &kp RIGHT  &trans              &kp PAGE_UP    &mkp LCLK  &trans  &mkp RCLK  &mkp MCLK  &trans
 &trans  &trans    &trans    &trans  &trans     &trans  &trans  &trans  &kp PAGE_DOWN  &trans     &trans  &trans     &trans     &trans
-&trans  &trans    &trans    &trans  &trans     &td_mouse_default  &trans  &trans  &td_mouse_default                  &trans     &trans
+&trans  &trans    &trans    &trans  &trans     &trans  &trans  &trans  &td_mouse_qwrt_trackbless                   &trans     &trans
             >;
         };
 
@@ -100,7 +129,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &td_trackbless_none              &trans  &trans
             >;
         };
 
@@ -111,7 +140,18 @@
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &td_trackbless_none              &trans  &trans
+            >;
+        };
+
+        trackbless_layer {
+            label = "TRACKBLESS";
+            bindings = <
+&kp GRAVE       &kp N1     &kp N2        &kp N3        &kp N4  &kp N5                                   &kp N6           &kp N7  &kp N8     &kp N9   &kp N0         &kp BSPC
+&kp TAB         &kp Q      &kp W         &kp E         &kp R   &kp T                                    &kp Y            &kp U   &kp I      &kp O    &kp P          &kp BACKSLASH
+&kp ESC         &kp A      &kp S         &kp D         &kp F   &kp G                                    &kp H            &kp J   &kp K      &kp L    &kp SEMI       &kp SQT
+&kp LEFT_SHIFT  &kp Z      &kp X         &kp C         &kp V   &kp B        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp N            &kp M   &kp COMMA  &kp DOT  &kp FSLH       &kp RIGHT_SHIFT
+&none           &kp LCTRL  &kp LEFT_ALT  &kp LEFT_WIN  &mo SNIPE  &td_trackbless_space  &mo SCROLL  &mo SYM  &td_qwrt_space                                &kp RIGHT_ALT  &kp DELETE
             >;
         };
     };
