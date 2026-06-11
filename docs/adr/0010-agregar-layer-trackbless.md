@@ -16,14 +16,14 @@ si este bloqueado.
 Agregar el layer `TRACKBLESS`:
 
 ```c
-#define TRACKBLESS 7
+#define TRACKBLESS 5
 ```
 
 `TRACKBLESS` replica la distribucion de `QWRT`, pero se incluye en
 `trackball_lock.layers`:
 
 ```c
-layers = <1 2 3 7>;
+layers = <1 2 3 5>;
 ```
 
 Crear tap-dances para que `TRACKBLESS` pueda activarse y desactivarse desde
@@ -71,6 +71,9 @@ En `TRACKBLESS`, las posiciones 56 y 57 quedan dedicadas a acceso de capas:
 
 El acceso a `MOUSE` queda principalmente por `automouse-layer`.
 
+ADR 0013 ajusta la prioridad numerica para que `SCROLL` quede por encima de
+`TRACKBLESS` y pueda usarse como ruta de salida cuando `TRACKBLESS` esta activo.
+
 ## Archivos afectados
 
 - `config/keyball61.keymap`
@@ -78,5 +81,5 @@ El acceso a `MOUSE` queda principalmente por `automouse-layer`.
 
 ## Reversal strategy
 
-Eliminar `TRACKBLESS`, quitar `7` de `trackball_lock.layers` y restaurar las
+Eliminar `TRACKBLESS`, quitar `5` de `trackball_lock.layers` y restaurar las
 posiciones 55 y 58 de `QWRT` segun el keymap anterior.
