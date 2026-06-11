@@ -167,7 +167,7 @@
 &kp TAB         &kp Q      &kp W         &kp E         &kp R   &kp T                                    &kp Y            &kp U   &kp I      &kp O    &kp P          &kp BACKSLASH
 &kp ESC         &kp A      &kp S         &kp D         &kp F   &kp G                                    &kp H            &kp J   &kp K      &kp L    &kp SEMI       &kp SQT
 &kp LEFT_SHIFT  &kp Z      &kp X         &kp C         &kp V   &kp B        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp N            &kp M   &kp COMMA  &kp DOT  &kp FSLH       &kp RIGHT_SHIFT
-&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &kp MINUS  &hold_fun_toggle FUN 0  &td_trackbless_space  &hold_scroll_toggle SCROLL 0  &hold_scroll_toggle SYM 0  &td_trackbless_space    &kp RIGHT_ALT  &kp ENTER
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &kp MINUS  &hold_fun_toggle FUN 0  &kp SPACE  &hold_scroll_toggle SCROLL 0  &hold_scroll_toggle SYM 0  &kp SPACE                  &kp RIGHT_ALT  &kp ENTER
             >;
         };
     };

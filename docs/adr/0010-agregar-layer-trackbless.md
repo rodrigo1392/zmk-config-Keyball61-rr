@@ -38,10 +38,10 @@ td_trackbless_space: td_trackbless_space {
 };
 ```
 
-En `TRACKBLESS`, posicion 58:
+En `TRACKBLESS`, posiciones 55 y 58:
 
 - tap: `SPACE`;
-- doble tap: alternar `TRACKBLESS`.
+- doble tap: sigue enviando `SPACE`; no desactiva `TRACKBLESS`.
 
 En `MOUSE` y `SCROLL`, posiciones 55 y 58:
 
@@ -59,9 +59,10 @@ posiciones de `MOUSE` volviera a `QWRT`.
 `QWRT` mantiene activacion automatica de `MOUSE` por movimiento. `TRACKBLESS`
 mantiene el mismo layout de escritura, pero descarta movimiento del trackball.
 
-La posicion 55 deja de ser `&lt MOUSE SPACE`. En `TRACKBLESS`, `MOUSE` y
-`SCROLL`, las posiciones 55 y 58 permiten alternar `TRACKBLESS`. En los demas
-layers no hay doble tap para `TRACKBLESS`.
+La posicion 55 deja de ser `&lt MOUSE SPACE`. En `MOUSE` y `SCROLL`, las
+posiciones 55 y 58 permiten alternar `TRACKBLESS`. En `TRACKBLESS`, esas
+posiciones quedan como espacio para evitar salir accidentalmente de la capa
+bloqueada.
 
 En `TRACKBLESS`, las posiciones 56 y 57 quedan dedicadas a acceso de capas:
 
