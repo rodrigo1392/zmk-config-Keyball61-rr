@@ -401,10 +401,28 @@ Lectura:
 
 Esto evita activar `SCROLL` accidentalmente con un solo toque.
 
-### Hold-tap custom: `scroll_hold_toggle`
+### Tap-dance: `td_scroll_qwrt`
 
 ```c
-scroll_hold_toggle: scroll_hold_toggle {
+td_scroll_qwrt: td_scroll_qwrt {
+    compatible = "zmk,behavior-tap-dance";
+    #binding-cells = <0>;
+    tapping-term-ms = <350>;
+    bindings = <&none>, <&to DEFAULT>;
+};
+```
+
+Lectura:
+
+- un tap: `&none`, no hace nada.
+- dos taps dentro de 350 ms: `&to DEFAULT`.
+
+Esto permite salir de `SCROLL` y volver a `QWRT` desde la posicion 57.
+
+### Hold-tap custom: `hold_scroll_toggle`
+
+```c
+hold_scroll_toggle: hold_scroll_toggle {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
     tapping-term-ms = <200>;
@@ -416,7 +434,7 @@ scroll_hold_toggle: scroll_hold_toggle {
 Uso actual:
 
 ```c
-&scroll_hold_toggle SCROLL 0
+&hold_scroll_toggle SCROLL 0
 ```
 
 Lectura:

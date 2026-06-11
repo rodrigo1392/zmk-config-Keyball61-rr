@@ -21,3 +21,4 @@ No todo cambio de keymap necesita ADR. En particular, los commits automaticos `[
 | [0011](0011-reorganizar-fila-inferior-y-scroll-direccional.md) | Reorganizar fila inferior, herencia de mouse/scroll y flechas en `SCROLL`. | pendiente |
 | [0012](0012-ajustar-accesos-fun-trackbless-y-delete.md) | Ajustar acceso global a `FUN`, limitar toggle de `TRACKBLESS` y duplicar `DEL` en `SCROLL`. | pendiente |
 | [0013](0013-priorizar-scroll-sobre-trackbless.md) | Priorizar `SCROLL` sobre `TRACKBLESS` para salir del modo bloqueado. | pendiente |
+| [0014](0014-ajustar-salida-mouse-scroll.md) | Ajustar acceso a `SCROLL` desde `MOUSE` y salida a `QWRT`. | pendiente |

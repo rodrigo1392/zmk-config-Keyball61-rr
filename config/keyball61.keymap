@@ -34,6 +34,13 @@
             bindings = <&none>, <&tog SCROLL>;
         };
 
+        td_scroll_qwrt: td_scroll_qwrt {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <350>;
+            bindings = <&none>, <&to DEFAULT>;
+        };
+
         hold_scroll_toggle: hold_scroll_toggle {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -132,9 +139,9 @@
             bindings = <
 &trans  &trans    &trans    &trans  &trans     &trans                  &kp C_VOL_DN   &kp C_VOL_UP  &kp C_PP  &kp C_PREV  &kp C_NEXT  &trans
 &trans  &trans    &trans    &trans  &trans     &trans                  &trans         &trans     &trans  &trans     &trans     &trans
-&trans  &trans    &mkp RCLK  &mkp MCLK  &mkp LCLK   &trans              &kp PAGE_UP    &mkp LCLK  &trans  &mkp RCLK  &mkp MCLK  &trans
+&trans  &trans    &mkp RCLK  &mkp MCLK  &mkp LCLK   &trans              &kp PAGE_UP    &mkp LCLK  &mkp MCLK  &mkp RCLK  &mkp MCLK  &trans
 &trans  &trans    &trans    &trans  &trans     &trans  &trans  &trans  &kp PAGE_DOWN  &trans     &trans  &trans     &trans     &trans
-&trans  &trans    &trans    &trans  &hold_fun_toggle FUN 0  &td_trackbless_toggle  &trans  &trans  &td_mouse_qwrt_trackbless          &trans     &trans
+&trans  &trans    &trans    &trans  &hold_fun_toggle FUN 0  &td_trackbless_toggle  &trans  &hold_scroll_toggle SCROLL 0  &td_mouse_qwrt_trackbless          &trans     &trans
             >;
         };
 
@@ -163,11 +170,11 @@
         scroll_layer {
             label = "SCROLL";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &kp DEL
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &kp UP  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp DEL  &trans  &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT
-&trans  &trans  &trans  &trans  &hold_fun_toggle FUN 0  &td_trackbless_toggle  &trans  &trans  &td_trackbless_toggle              &trans  &trans
+&trans  &trans  &trans  &trans  &hold_fun_toggle FUN 0  &td_trackbless_toggle  &trans  &td_scroll_qwrt  &td_trackbless_toggle              &trans  &trans
             >;
         };
     };
