@@ -267,11 +267,11 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: Ctl+Gui+1, s: Ctl+Gui+!}
-  - {t: Ctl+Gui+2, s: Ctl+Gui+@}
-  - {t: Ctl+Gui+3, s: Ctl+Gui+#}
-  - {t: Ctl+Gui+4, s: Ctl+Gui+$}
-  - {t: Ctl+Gui+5, s: Ctl+Gui+%}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - Ctl+Gui+$$mdi:arrow-left-bold$$
+  - Ctl+Gui+$$mdi:arrow-right-bold$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -292,8 +292,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:brightness-5$$
   - $$mdi:brightness-7$$
+  - $$mdi:brightness-5$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}

@@ -1676,45 +1676,30 @@ rect.held, rect.combo.held {
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key trans"/>
 <use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-9" y="-13" height="18" width="18.0" class="key trans tap glyph mdi:transfer"/>
 </g>
-<g transform="translate(588, 109)" class="key keypos-18">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">
-<tspan x="0" dy="-0.3em">Ctl+</tspan><tspan x="0" dy="1.2em">Gui+1</tspan>
-</text>
-<text x="0" y="-24" class="key shifted"><tspan style="font-size: 67%">Ctl+Gui+!</tspan></text>
+<g transform="translate(588, 109)" class="key trans keypos-18">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key trans"/>
+<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-9" y="-13" height="18" width="18.0" class="key trans tap glyph mdi:transfer"/>
 </g>
-<g transform="translate(644, 98)" class="key keypos-19">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">
-<tspan x="0" dy="-0.3em">Ctl+</tspan><tspan x="0" dy="1.2em">Gui+2</tspan>
-</text>
-<text x="0" y="-24" class="key shifted"><tspan style="font-size: 67%">Ctl+Gui+@</tspan></text>
+<g transform="translate(644, 98)" class="key trans keypos-19">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key trans"/>
+<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-9" y="-13" height="18" width="18.0" class="key trans tap glyph mdi:transfer"/>
 </g>
-<g transform="translate(700, 84)" class="key keypos-20">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">
-<tspan x="0" dy="-0.3em">Ctl+</tspan><tspan x="0" dy="1.2em">Gui+3</tspan>
-</text>
-<text x="0" y="-24" class="key shifted"><tspan style="font-size: 67%">Ctl+Gui+#</tspan></text>
+<g transform="translate(700, 84)" class="key trans keypos-20">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key trans"/>
+<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-9" y="-13" height="18" width="18.0" class="key trans tap glyph mdi:transfer"/>
 </g>
 <g transform="translate(756, 98)" class="key keypos-21">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">
-<tspan x="0" dy="-0.3em">Ctl+</tspan><tspan x="0" dy="1.2em">Gui+4</tspan>
-</text>
-<text x="0" y="-24" class="key shifted"><tspan style="font-size: 67%">Ctl+Gui+$</tspan></text>
+<use href="#mdi:arrow-left-bold" xlink:href="#mdi:arrow-left-bold" x="-9" y="-13" height="18" width="18.0" class="key tap glyph mdi:arrow-left-bold"/>
 </g>
 <g transform="translate(812, 112)" class="key keypos-22">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">
-<tspan x="0" dy="-0.3em">Ctl+</tspan><tspan x="0" dy="1.2em">Gui+5</tspan>
-</text>
-<text x="0" y="-24" class="key shifted"><tspan style="font-size: 67%">Ctl+Gui+%</tspan></text>
+<use href="#mdi:arrow-right-bold" xlink:href="#mdi:arrow-right-bold" x="-9" y="-13" height="18" width="18.0" class="key tap glyph mdi:arrow-right-bold"/>
 </g>
 <g transform="translate(868, 112)" class="key trans keypos-23">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans side"/>
@@ -1820,12 +1805,12 @@ rect.held, rect.combo.held {
 <g transform="translate(532, 221)" class="key keypos-43">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<use href="#mdi:brightness-5" xlink:href="#mdi:brightness-5" x="-9" y="-13" height="18" width="18.0" class="key tap glyph mdi:brightness-5"/>
+<use href="#mdi:brightness-7" xlink:href="#mdi:brightness-7" x="-9" y="-13" height="18" width="18.0" class="key tap glyph mdi:brightness-7"/>
 </g>
 <g transform="translate(588, 221)" class="key keypos-44">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<use href="#mdi:brightness-7" xlink:href="#mdi:brightness-7" x="-9" y="-13" height="18" width="18.0" class="key tap glyph mdi:brightness-7"/>
+<use href="#mdi:brightness-5" xlink:href="#mdi:brightness-5" x="-9" y="-13" height="18" width="18.0" class="key tap glyph mdi:brightness-5"/>
 </g>
 <g transform="translate(644, 210)" class="key trans keypos-45">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans side"/>
