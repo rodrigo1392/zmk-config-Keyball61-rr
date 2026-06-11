@@ -15,3 +15,4 @@ No todo cambio de keymap necesita ADR. En particular, los commits automaticos `[
 | [0005](0005-bloquear-trackball-por-capas.md) | Sustituir automouse por bloqueo explicito del trackball en capas seleccionadas. | `2f83d46`, `7782a73`, `251ead8`, `041e3c4` |
 | [0006](0006-modelar-mouse-scroll-lock-con-capas-y-comportamientos.md) | Mouse, scroll y lock como modos compuestos mediante layers, combos, hold-tap y tap-dance. | `3d32284`, `73c52b5`, `29ce45b`, `1a0b42e`, `74d485c`, `2c2b2da`, `3dbd0d5` |
 | [0007](0007-volver-a-comportamiento-base-con-qwrt-local.md) | Volver al comportamiento base manteniendo QWRT local. | pendiente |
+| [0008](0008-ajustar-trackball-y-controles-basicos.md) | Ajustar trackball, acceso a simbolos, espacio, enter y controles basicos de mouse. | pendiente |

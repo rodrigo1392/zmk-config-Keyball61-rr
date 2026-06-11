@@ -35,7 +35,7 @@
 &kp TAB         &kp Q      &kp W         &kp E         &kp R   &kp T                                    &kp Y            &kp U   &kp I      &kp O    &kp P          &kp BACKSLASH
 &kp ESC         &kp A      &kp S         &kp D         &kp F   &kp G                                    &kp H            &kp J   &kp K      &kp L    &kp SEMI       &kp SQT
 &kp LEFT_SHIFT  &kp Z      &kp X         &kp C         &kp V   &kp B        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp N            &kp M   &kp COMMA  &kp DOT  &kp FSLH       &kp RIGHT_SHIFT
-&none           &kp LCTRL  &kp LEFT_ALT  &kp LEFT_WIN  &mo SNIPE  &lt MOUSE SPACE  &mo SCROLL    &kp ENTER    &lt SYM BACKSPACE                              &kp RIGHT_ALT  &kp DELETE
+&none           &kp LCTRL  &kp LEFT_ALT  &kp LEFT_WIN  &mo SNIPE  &lt MOUSE SPACE  &mo SCROLL    &mo SYM      &kp SPACE                                      &kp RIGHT_ALT  &kp DELETE
             >;
         };
 
@@ -58,7 +58,7 @@
 &trans  &trans           &trans        &trans        &trans        &trans                       &trans          &trans         &trans            &trans                &trans                 &trans
 &trans  &bt BT_CLR       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans                       &kp MINUS       &kp EQUAL      &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &trans                 &trans
 &trans  &trans           &trans        &trans        &trans        &trans       &trans  &trans  &kp UNDERSCORE  &kp PLUS       &trans            &trans                &trans                 &trans
-&trans  &trans           &trans        &trans        &trans        &trans       &trans  &trans  &trans                                                                 &trans                 &trans
+&trans  &trans           &trans        &trans        &trans        &trans       &trans  &trans  &kp ENTER                                                              &trans                 &trans
             >;
         };
 
@@ -76,9 +76,9 @@
         mouse_layer {
             label = "MOUSE";
             bindings = <
+&trans  &trans    &trans    &trans  &trans     &trans                  &kp C_VOL_DN   &kp C_VOL_UP  &kp C_PP  &kp C_PREV  &kp C_NEXT  &trans
 &trans  &trans    &trans    &trans  &trans     &trans                  &trans         &trans     &trans  &trans     &trans     &trans
-&trans  &trans    &trans    &trans  &trans     &trans                  &trans         &trans     &trans  &trans     &trans     &trans
-&trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans                  &kp PAGE_UP    &mkp LCLK  &trans  &mkp RCLK  &mkp MCLK  &trans
+&trans  &mkp RCLK  &mkp MCLK  &mkp LCLK  &kp RIGHT  &trans              &kp PAGE_UP    &mkp LCLK  &trans  &mkp RCLK  &mkp MCLK  &trans
 &trans  &trans    &trans    &trans  &trans     &trans  &trans  &trans  &kp PAGE_DOWN  &trans     &trans  &trans     &trans     &trans
 &trans  &trans    &trans    &trans  &trans     &trans  &trans  &trans  &mo MOUSE                                    &trans     &trans
             >;
