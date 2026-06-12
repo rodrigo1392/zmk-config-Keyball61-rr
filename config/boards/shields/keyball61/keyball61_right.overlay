@@ -62,12 +62,12 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        automouse-layer = <6>;
-		scroll-layers = <4>;
-		snipe-layers = <1>;
+        automouse-layer = <4>;
+		scroll-layers = <5>;
+		snipe-layers = <6>;
 
         trackball_lock {
-            layers = <5 7>;
+            layers = <1 7>;
             bindings = <&none>, <&none>;
             tick = <1>;
         };
