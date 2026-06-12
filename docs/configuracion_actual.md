@@ -102,9 +102,9 @@ arriba hacia abajo. `Posicion ZMK` usa indice 0-based.
 | 51 | `&kp LEFT_WIN` | Super/Windows izquierdo |
 | 52 | `&kp LEFT_ALT` | Alt izquierdo |
 | 53 | `&kp MINUS` | `-` |
-| 54 | `&td_fun_to_toggle` | Tap: `FUN` momentaneo; doble tap: toggle `FUN` |
+| 54 | `&hold_fun_toggle FUN 0` | Hold: `FUN` momentaneo; doble tap: toggle `FUN` |
 | 55 | `&kp SPACE` | Espacio |
-| 56 | `&td_scroll_to_toggle` | Tap: `SCROLL` momentaneo; doble tap: toggle `SCROLL` |
+| 56 | `&hold_scroll_toggle SCROLL 0` | Hold: `SCROLL` momentaneo; doble tap: toggle `SCROLL` |
 | 57 | `&ht_57_to_sym_hold_trackbless TRACKBLESS 0` | Tap: `SYM`; doble tap: toggle `SYM`; hold: toggle `TRACKBLESS` |
 | 58 | `&kp SPACE` | Espacio |
 | 59 | `&kp RIGHT_ALT` | Alt derecho |
@@ -116,4 +116,25 @@ arriba hacia abajo. `Posicion ZMK` usa indice 0-based.
 | ---: | --- | --- |
 | 18 | `&kp LC(LG(LEFT))` | Cambiar al escritorio izquierdo |
 | 19 | `&kp LC(LG(RIGHT))` | Cambiar al escritorio derecho |
-| 22 | `&td_scroll_to_toggle` | Tap: `SCROLL` momentaneo; doble tap: toggle `SCROLL` |
+| 22 | `&hold_scroll_toggle SCROLL 0` | Hold: `SCROLL` momentaneo; doble tap: toggle `SCROLL` |
+| 54 | `&hold_fun_toggle FUN 0` | Hold: `FUN` momentaneo; doble tap: toggle `FUN` |
+| 56 | `&hold_scroll_toggle SCROLL 0` | Hold: `SCROLL` momentaneo; doble tap: toggle `SCROLL` |
+| 57 | `&hold_sym_toggle SYM 0` | Hold: `SYM` momentaneo; doble tap: toggle `SYM` |
+| 58 | `&ht_57_qwrt_hold_trackbless TRACKBLESS 0` | Tap: `QWRT`; doble tap: toggle `SYM`; hold: toggle `TRACKBLESS` |
+
+## Teclas F en FUN
+
+| Posicion ZMK | Binding |
+| ---: | --- |
+| 13 | `&kp F1` |
+| 14 | `&kp F2` |
+| 15 | `&kp F3` |
+| 16 | `&kp F4` |
+| 25 | `&kp F5` |
+| 26 | `&kp F6` |
+| 27 | `&kp F7` |
+| 28 | `&kp F8` |
+| 37 | `&kp F9` |
+| 38 | `&kp F10` |
+| 39 | `&kp F11` |
+| 40 | `&kp F12` |

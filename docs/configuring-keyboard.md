@@ -387,21 +387,29 @@ Lectura:
 
 Esto permite que una sola posicion sirva tanto para acceso momentaneo como para modo persistente.
 
-### Tap-dance: `td_scroll_to_toggle`
+### Hold-tap: `hold_scroll_toggle`
 
 ```c
-td_scroll_to_toggle: td_scroll_to_toggle {
+td_scroll_toggle: td_scroll_toggle {
     compatible = "zmk,behavior-tap-dance";
     #binding-cells = <0>;
     tapping-term-ms = <350>;
-    bindings = <&mo SCROLL>, <&tog SCROLL>;
+    bindings = <&none>, <&tog SCROLL>;
+};
+
+hold_scroll_toggle: hold_scroll_toggle {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <200>;
+    flavor = "hold-preferred";
+    bindings = <&mo>, <&td_scroll_toggle>;
 };
 ```
 
 Lectura:
 
-- un tap: activa `SCROLL` momentaneamente.
-- dos taps dentro de 350 ms: toggle de `SCROLL`.
+- hold: activa `SCROLL` momentaneamente.
+- doble tap: toggle de `SCROLL`.
 
 ### Tap-dance: `td_qwrt_sym_toggle`
 
