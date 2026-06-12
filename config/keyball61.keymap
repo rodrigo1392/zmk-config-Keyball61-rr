@@ -117,9 +117,9 @@
         ht_57_to_sym_hold_trackbless: ht_57_to_sym_hold_trackbless {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <200>;
             flavor = "hold-preferred";
-            bindings = <&tog>, <&td_sym_to_toggle>;
+            bindings = <&tog>, <&none>;
         };
 
         ht_57_qwrt_hold_trackbless: ht_57_qwrt_hold_trackbless {
@@ -186,7 +186,7 @@
         function_layer {
             label = "FUN";
             bindings = <
-&to BLOCKED  &tog SNIPE &none   &none   &none   &none                  &kp PLUS  &kp MINUS  &kp ASTERISK  &kp FSLH  &none  &none
+&to BLOCKED  &tog SNIPE &tog SYM &none   &none   &none                  &kp PLUS  &kp MINUS  &kp ASTERISK  &kp FSLH  &none  &none
 &none        &kp F1      &kp F2  &kp F3  &kp F4  &email_rodrigo         &kp N7    &kp N8     &kp N9        &kp EQUAL &none  &none
 &none        &kp F5      &kp F6  &kp F7  &kp F8  &kp PAGE_UP            &kp N4    &kp N5     &kp N6        &none     &none  &none
 &none        &kp F9      &kp F10 &kp F11 &kp F12 &kp PAGE_DOWN  &none  &kp N0  &kp N1  &kp N2  &kp N3  &none  &none  &none
