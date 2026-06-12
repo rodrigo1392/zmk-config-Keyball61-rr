@@ -58,7 +58,7 @@ layers:
   - {t: '&td_fun_toggle', h: FUN}
   - $$mdi:keyboard-space$$
   - {t: '&td_scroll_toggle', h: SCROLL}
-  - {t: '&td_sym_to_toggle', h: TRACKBLESS}
+  - {t: '$$mdi:minus-circle-outline$$', h: TRACKBLESS}
   - $$mdi:keyboard-space$$
   - $$mdi:apple-keyboard-option$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
@@ -189,7 +189,7 @@ layers:
   FUN:
   - {t: BLOCKED, h: toggle}
   - {t: SNIPE, h: toggle}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: SYM, h: toggle}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
