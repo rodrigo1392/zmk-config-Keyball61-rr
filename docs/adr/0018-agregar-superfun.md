@@ -9,11 +9,13 @@ sistema operativo sin competir con combinaciones normales del teclado.
 
 Agregar `SUPERFUN` como segundo layer mas alto, solo por debajo de `BLOCKED`.
 
-Activar `SUPERFUN` desde `FUN` en la posicion de `\` con hold-tap: hold activa
+Activar `SUPERFUN` desde `FUN` en la posicion de `\` con `&lt`: hold activa
 `SUPERFUN`, tap envia `BACKSLASH`.
 
 Asignar `F13` a `F24` a las posiciones `1` a `0`, `Q` y `W` dentro de
 `SUPERFUN`.
+
+Mover los cambios de escritorio por `Y`/`U` desde `MOUSE` a `SUPERFUN`.
 
 ## Consequences
 
