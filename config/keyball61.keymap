@@ -5,7 +5,8 @@
 #define FUN        4
 #define SCROLL     5
 #define SNIPE      6
-#define BLOCKED    7
+#define SUPERFUN   7
+#define BLOCKED    8
 
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
@@ -107,6 +108,14 @@
             bindings = <&mo>, <&td_fun_toggle>;
         };
 
+        hold_superfun_backslash: hold_superfun_backslash {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "hold-preferred";
+            bindings = <&mo>, <&kp>;
+        };
+
         td_blocked_default: td_blocked_default {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -190,7 +199,7 @@
 &none   &kp LC(Q)      &kp LC(W)      &kp LC(E)   &kp LC(R)      &kp LC(T)                  &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))  &none      &none  &none  &none
 &none   &kp LC(A)     &mkp RCLK  &mkp MCLK  &mkp LCLK  &none            &kp PAGE_UP    &mkp LCLK     &mkp MCLK  &mkp RCLK  &none  &hold_scroll_toggle SCROLL 0
 &kp LEFT_SHIFT  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &none  &none  &kp C_BRI_DN  &kp C_BRI_UP  &none  &none  &none  &none  &kp RIGHT_SHIFT
-&kp LCTRL  &none     &none     &none  &hold_fun_toggle FUN 0  &none  &hold_scroll_toggle SCROLL 0  &ht_57_qwrt_hold_trackbless TRACKBLESS 0  &none                  &none  &kp ENTER
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &none  &hold_fun_toggle FUN 0  &none  &hold_scroll_toggle SCROLL 0  &ht_57_qwrt_hold_trackbless TRACKBLESS 0  &none                  &kp RIGHT_ALT  &kp ENTER
             >;
         };
 
@@ -198,7 +207,7 @@
             label = "FUN";
             bindings = <
 &to BLOCKED  &tog SNIPE &tog SYM &none   &none   &none                  &kp PLUS  &kp MINUS  &kp ASTERISK  &kp FSLH  &none  &none
-&none        &kp F1      &kp F2  &kp F3  &kp F4  &email_rodrigo         &kp N7    &kp N8     &kp N9        &kp EQUAL &none  &none
+&none        &kp F1      &kp F2  &kp F3  &kp F4  &email_rodrigo         &kp N7    &kp N8     &kp N9        &kp EQUAL &none  &hold_superfun_backslash SUPERFUN BACKSLASH
 &none        &kp F5      &kp F6  &kp F7  &kp F8  &kp PAGE_UP            &kp N4    &kp N5     &kp N6        &none     &none  &none
 &none        &kp F9      &kp F10 &kp F11 &kp F12 &kp PAGE_DOWN  &none  &kp N0  &kp N1  &kp N2  &kp N3  &none  &none  &none
 &none        &none       &none   &none   &hold_fun_toggle FUN 0  &kp ENTER  &hold_scroll_toggle SCROLL 0  &ht_57_qwrt_hold_trackbless TRACKBLESS 0  &none              &none  &none
@@ -224,6 +233,17 @@
 &none  &none  &none  &none  &none  &none                  &none  &none  &none  &none  &none  &none
 &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
 &none  &none  &none  &none  &hold_fun_toggle FUN 0  &none  &hold_scroll_toggle SCROLL 0  &ht_57_qwrt_hold_trackbless TRACKBLESS 0  &none              &none  &none
+            >;
+        };
+
+        superfun_layer {
+            label = "SUPERFUN";
+            bindings = <
+&none  &kp F13  &kp F14  &kp F15  &kp F16  &kp F17                  &kp F18  &kp F19  &kp F20  &kp F21  &kp F22  &none
+&none  &kp F23  &kp F24  &none    &none    &none                    &none    &none    &none    &none    &none    &none
+&none  &none    &none    &none    &none    &none                    &none    &none    &none    &none    &none    &none
+&none  &none    &none    &none    &none    &none  &none  &none  &none  &none  &none  &none  &none  &none
+&none  &none    &none    &none    &none    &none  &none  &none  &none                  &none  &none
             >;
         };
 
